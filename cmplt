@@ -1,0 +1,23 @@
+#!/bin/bash
+#
+# This script compiles the first tex file it finds in the current directory. It
+# takes the necessary compilation steps to correctly display relative values
+# like page numbers and the TOC. It does not take the necessary steps to link up
+# citations. Once compilation has completed, all .aux, .bbl, .bcf, .blg, .loc,
+# .lof, .log, .lot, .out, .run.xml, and .toc files are deleted.
+#
+
+
+# Find the first file ending with .tex in the current directory
+file=$(find . -maxdepth 1 -type f -name "*.tex" | head -n 1)
+
+# Check if a .tex file was found
+if [ -n "$file" ]; then
+    cmp="pdflatex --interaction=nonstopmode -file-line-error -output-format=pdf -output-directory=$(pwd) -shell-escape $file"
+    $cmp
+    $cmp
+    find . -type f \( -name "*.aux" -o -name "*.bbl" -o -name "*.bcf" -o -name "*.blg" -o -name "*.loc" -o -name "*.lof" -o -name "*.log" -o -name "*.lot" -o -name "*.out" -o -name "*.run.xml" -o -name "*.toc" \) -delete
+else
+    echo "No .tex file found."
+fi
+
