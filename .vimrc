@@ -45,6 +45,15 @@ set showcmd
 set colorcolumn=81,101,121
 
 " Highlights whitespace at end of line.
-highlight ExtraWhitespace ctermbg=LightMagenta guibg=LightMagenta 
+highlight ExtraWhitespace ctermbg=LightMagenta guibg=LightMagenta
 match ExtraWhitespace /\s\+$/
+
+" Adds closing bracket when adding opening bracket.
+inoremap ( ()<Left>
+inoremap [ []<Left>
+inoremap { {}<Left>
+inoremap < <><Left>
+inoremap " ""<Left>
+inoremap ' ''<Left>
+inoremap /* /*  */<Left><Left><Left>
 
