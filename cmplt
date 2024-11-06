@@ -16,7 +16,8 @@ if [ -n "$file" ]; then
     cmp="pdflatex --interaction=nonstopmode -file-line-error -output-format=pdf -output-directory=$(pwd) -shell-escape $file"
     $cmp
     $cmp
-    find . -type f \( -name "*.aux" -o -name "*.bbl" -o -name "*.bcf" -o -name "*.blg" -o -name "*.loc" -o -name "*.lof" -o -name "*.log" -o -name "*.lot" -o -name "*.out" -o -name "*.run.xml" -o -name "*.toc" \) -delete
+    # Deletes auxiliary files.
+    # find . -type f \( -name "*.aux" -o -name "*.bbl" -o -name "*.bcf" -o -name "*.blg" -o -name "*.loc" -o -name "*.lof" -o -name "*.log" -o -name "*.lot" -o -name "*.out" -o -name "*.run.xml" -o -name "*.toc" \) -delete
 else
     echo "No .tex file found."
 fi

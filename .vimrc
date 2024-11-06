@@ -3,6 +3,10 @@ set number
 " Enable relative line numbers.
 set rnu
 
+" Set encoding to display more characters
+set encoding=utf-8
+set fileencoding=utf-8
+
 " Highlights all matches in yellow during a search.
 set hlsearch
 
@@ -41,6 +45,9 @@ set ttimeoutlen=0
 " Enables counter for selected characters in visual mode.
 set showcmd
 
+" Displays character at end of line when it's being wrapped.
+set showbreak=⏎
+
 " Displays marker at character 80 of every line.
 set colorcolumn=81,101,121
 
@@ -56,4 +63,11 @@ inoremap < <><Left>
 inoremap " ""<Left>
 inoremap ' ''<Left>
 inoremap /* /*  */<Left><Left><Left>
+
+" Disables soft-wrap
+set nowrap
+
+" Highlights tab and oel characters.
+set list
+set listchars=tab:->,nbsp:␣,extends:›
 
