@@ -9,6 +9,8 @@ set fileencoding=utf-8
 
 " Highlights all matches in yellow during a search.
 set hlsearch
+" Makes search use similar syntax to regex
+set magic
 
 " Create undo file if possible.
 if has('persistent_undo')
@@ -55,13 +57,19 @@ set colorcolumn=81,101,121
 highlight ExtraWhitespace ctermbg=LightMagenta guibg=LightMagenta
 match ExtraWhitespace /\s\+$/
 
+" Allows typing of umlaut
+inoremap :ae ä
+inoremap :oe ö
+inoremap :ue ü
+inoremap :Ae Ä
+inoremap :Oe Ö
+inoremap :Ue Ü
+
 " Adds closing bracket when adding opening bracket.
 inoremap ( ()<Left>
 inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap < <><Left>
-inoremap " ""<Left>
-inoremap ' ''<Left>
 inoremap /* /*  */<Left><Left><Left>
 
 " Disables soft-wrap
