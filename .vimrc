@@ -53,6 +53,9 @@ set showbreak=⏎
 " Displays marker at character 80 of every line.
 set colorcolumn=81,101,121
 
+" Always keeps n number of lines visible above and below the cursor.
+set scrolloff=5
+
 " Highlights whitespace at end of line.
 highlight ExtraWhitespace ctermbg=LightMagenta guibg=LightMagenta
 match ExtraWhitespace /\s\+$/
@@ -71,9 +74,6 @@ inoremap [ []<Left>
 inoremap { {}<Left>
 inoremap < <><Left>
 inoremap /* /*  */<Left><Left><Left>
-
-" Disables soft-wrap
-set nowrap
 
 " Highlights tab and oel characters.
 set list
