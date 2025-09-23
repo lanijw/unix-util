@@ -3,6 +3,10 @@ set number
 " Enable relative line numbers.
 set rnu
 
+" Autorewraps markdown files to be max of 80 chars long.
+" autocmd FileType markdown setlocal textwidth=80
+" autocmd BufWritePre *.md normal gggqG
+
 " Set encoding to display more characters
 set encoding=utf-8
 set fileencoding=utf-8
@@ -55,6 +59,8 @@ set colorcolumn=81,101,121
 
 " Always keeps n number of lines visible above and below the cursor.
 set scrolloff=5
+nnoremap L L5j
+nnoremap H H5k
 
 " Highlights whitespace at end of line.
 highlight ExtraWhitespace ctermbg=LightMagenta guibg=LightMagenta
