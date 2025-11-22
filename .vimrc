@@ -24,6 +24,10 @@ endif
 " Enables syntax highlighting.
 syntax on
 
+" Disable syntax highlighting for js and ts files, as they often seem to get caught in an infinite loop.
+autocmd FileType javascript setlocal syntax=OFF
+autocmd FileType typescript setlocal syntax=OFF
+
 " Disables compatible mode. Which allows vim to use more modern features.
 set nocp
 
