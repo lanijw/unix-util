@@ -43,6 +43,8 @@ set autoindent
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+" Sets tab length to 2 for tex files.
+autocmd BufRead,BufNewFile *.tex,*.yml setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Makes vim replace the tab character with spaces.
 set expandtab
 
@@ -85,7 +87,27 @@ inoremap { {}<Left>
 inoremap < <><Left>
 inoremap /* /*  */<Left><Left><Left>
 
+" Smart skips over existing closing brackets in insert mode
+inoremap <expr> )  getline('.')[col('.') - 1] == ')'  ? "\<Right>" : ')'
+inoremap <expr> ]  getline('.')[col('.') - 1] == ']'  ? "\<Right>" : ']'
+inoremap <expr> }  getline('.')[col('.') - 1] == '}'  ? "\<Right>" : '}'
+inoremap <expr> >  getline('.')[col('.') - 1] == '>'  ? "\<Right>" : '>'
+inoremap <expr> "  getline('.')[col('.') - 1] == '"'  ? "\<Right>" : '"'
+inoremap <expr> '  getline('.')[col('.') - 1] == "'"  ? "\<Right>" : "'"
+
 " Highlights tab and oel characters.
 set list
 set listchars=tab:->,nbsp:␣,extends:›
+
+" Adds relative linenos in netrw
+augroup netrw_numbers
+    autocmd!
+    autocmd FileType netrw setlocal number relativenumber
+augroup END
+" Sets default netrw display style to tree
+let g:netrw_liststyle = 3
+" Hides swp and dotfiles
+let g:netrw_list_hide = '^\..*'
+" Displays banner with pwd
+let g:netrw_banner=1
 
