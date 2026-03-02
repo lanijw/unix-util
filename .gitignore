@@ -1,3 +1,7 @@
 # Vim
 *un~
+.netrwhist
+
+# OSX
+.DS_Store
 

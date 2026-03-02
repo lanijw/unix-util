@@ -111,3 +111,13 @@ let g:netrw_list_hide = '^\..*'
 " Displays banner with pwd
 let g:netrw_banner=1
 
+" enable spellcheck languages
+set spelllang=en_gb,fr,de_ch
+" enable case-sensitive spellcheck respecting sentence beginnings.
+set spell
+
+" Enable automatic wrapping, when typing more than 80 columns.
+set textwidth=80
+" Push edge of automatic VISUAL wrapping by two columns.
+set wrapmargin=2
+
