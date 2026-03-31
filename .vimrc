@@ -1,4 +1,5 @@
 " Enable line numbers.
+
 set number
 " Enable relative line numbers.
 set rnu
@@ -111,6 +112,12 @@ let g:netrw_list_hide = '^\..*'
 " Displays banner with pwd
 let g:netrw_banner=1
 
+" Disables Q key (ex mode by default)
+nnoremap Q <Nop>
+
+" To download languages, use this command with one language at a time in a vim
+" editor and the editor will ask you whether you'd like to download the spl
+" file.
 " enable spellcheck languages
 set spelllang=en_gb,fr,de_ch
 " enable case-sensitive spellcheck respecting sentence beginnings.
