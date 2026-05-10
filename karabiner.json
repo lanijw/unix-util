@@ -1,4 +1,5 @@
 {
+    "machine_specific": { "krbn-d08d54fd-a3ea-42aa-9aa2-695e37854f46": { "external_editor_path": "/Applications/Visual Studio Code.app" } },
     "profiles": [
         {
             "complex_modifications": {
@@ -275,6 +276,31 @@
                                     },
                                     {
                                         "key_code": "u",
+                                        "modifiers": ["left_shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Remaps Backtick and Tilde Key",
+                        "manipulators": [
+                            {
+                                "from": { "key_code": "non_us_backslash" },
+                                "to": [
+                                    { "key_code": "grave_accent_and_tilde" }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "non_us_backslash",
+                                    "modifiers": { "mandatory": ["left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
                                         "modifiers": ["left_shift"]
                                     }
                                 ],
